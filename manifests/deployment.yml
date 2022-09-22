@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: mileslabpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mileslabpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: mileslabpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: mileslabpipelinesjavascriptdocker 
+          image: user30containerregistry.azurecr.io/mileslabpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
